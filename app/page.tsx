@@ -1,7 +1,19 @@
-export default function Home() {
+import { Home } from "@/components/sections/Home";
+import { About } from "@/components/sections/About";
+import { Experience } from "@/components/sections/Experience";
+import { Projects } from "@/components/sections/Projects";
+import { Skills } from "@/components/sections/Skills";
+import { Contact } from "@/components/sections/Contact";
+
+export default function Page() {
   return (
-    <main className="flex min-h-screen items-center justify-center">
-      <p className="text-text-primary text-2xl">Portfolio OS</p>
+    <main>
+      <Home />
+      <About />
+      <Experience />
+      <Projects />
+      <Skills />
+      <Contact />
     </main>
   );
 }
