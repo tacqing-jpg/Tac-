@@ -42,6 +42,11 @@ export interface Profile {
     github: string;
     twitter: string;
   };
+  life: {
+    hobbies: { name: string; emoji: string; description: string }[];
+    personality: string[];
+    quote: string;
+  };
 }
 
 const profile: Profile = {
@@ -210,6 +215,23 @@ const profile: Profile = {
     email: "alex@example.com",
     github: "https://github.com/alexchen",
     twitter: "https://x.com/alexchen",
+  },
+  life: {
+    hobbies: [
+      { name: "Photography", emoji: "📷", description: "Street photography — capturing fleeting moments in urban landscapes." },
+      { name: "Coffee Brewing", emoji: "☕", description: "Perfecting the pour-over. Coffee is a ritual, not just caffeine." },
+      { name: "Hiking", emoji: "🥾", description: "Weekend trail explorer. Nature is the best reset button." },
+      { name: "Reading", emoji: "📚", description: "Sci-fi and design books. Currently: The Design of Everyday Things." },
+      { name: "Music", emoji: "🎵", description: "Lo-fi beats while coding. Jazz while thinking. Rock while celebrating." },
+    ],
+    personality: [
+      "INFJ-T",
+      "Detail-oriented",
+      "Curious learner",
+      "Team player",
+      "Problem solver",
+    ],
+    quote: "The best way to predict the future is to create it.",
   },
 };
 
