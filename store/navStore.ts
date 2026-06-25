@@ -8,8 +8,11 @@ interface NavState {
 }
 
 export const useNavStore = create<NavState>((set) => ({
-  activeSection: "home",
+  activeSection: "",
   cmdKOpen: false,
-  setActiveSection: (section) => set({ activeSection: section }),
+  setActiveSection: (section) =>
+    set((state) => ({
+      activeSection: state.activeSection === section ? "" : section,
+    })),
   setCmdKOpen: (open) => set({ cmdKOpen: open }),
 }));
