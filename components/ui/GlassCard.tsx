@@ -1,21 +1,24 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { type ElementType, type ReactNode } from "react";
+import { type ComponentPropsWithoutRef, type ElementType, type ReactNode } from "react";
 
-interface GlassCardProps {
+type GlassCardProps<T extends ElementType = "div"> = {
   children: ReactNode;
   className?: string;
   hover?: boolean;
-  as?: ElementType;
-}
+  as?: T;
+} & ComponentPropsWithoutRef<T>;
 
-export function GlassCard({
+export function GlassCard<T extends ElementType = "div">({
   children,
   className,
   hover = true,
-  as: Tag = "div",
-}: GlassCardProps) {
+  as,
+  ...rest
+}: GlassCardProps<T>) {
+  const Tag = as ?? "div";
+
   return (
     <Tag
       className={cn(
@@ -24,6 +27,7 @@ export function GlassCard({
           "hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:border-white/20",
         className
       )}
+      {...rest}
     >
       {children}
     </Tag>
