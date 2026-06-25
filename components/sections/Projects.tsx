@@ -4,6 +4,7 @@ import profile from "@/data/profile";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { GlassCard } from "@/components/ui/GlassCard";
+import { GlowEffect } from "@/components/effects/GlowEffect";
 import { ExternalLink, Github } from "lucide-react";
 import { type MouseEvent, useCallback } from "react";
 
@@ -26,7 +27,7 @@ function ProjectCard({
       onMouseMove={handleMouseMove}
     >
       {/* Glow */}
-      <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <GlowEffect />
 
       {/* Thumbnail placeholder */}
       <div className="mb-4 aspect-video rounded-xl bg-white/5 flex items-center justify-center text-text-tertiary text-sm border border-white/5">
