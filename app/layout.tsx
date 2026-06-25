@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { StatusBar } from "@/components/layout/StatusBar";
+import { Dock } from "@/components/layout/Dock";
+import { StarField } from "@/components/effects/StarField";
 import { CmdKDialog } from "@/components/ui/CmdKDialog";
-import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Portfolio OS — Alex Chen",
-  description: "Personal portfolio — interactive resume",
+  title: "Space OS — Portfolio",
+  description: "Personal portfolio — Space OS desktop experience",
 };
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="zh-CN" className="dark">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -30,11 +30,13 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-bg-primary text-text-secondary antialiased">
-        <Navbar />
-        {children}
-        <Footer />
+        <StarField />
+        <StatusBar />
+        <main className="relative z-10 pt-12 pb-28 min-h-screen">
+          {children}
+        </main>
+        <Dock />
         <CmdKDialog />
-        <ScrollToTop />
       </body>
     </html>
   );
