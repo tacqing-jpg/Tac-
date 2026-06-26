@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { StatusBar } from "@/components/layout/StatusBar";
 import { Dock } from "@/components/layout/Dock";
-import { StarField } from "@/components/effects/StarField";
+import { LiquidChrome } from "@/components/effects/LiquidChrome";
 import { CmdKDialog } from "@/components/ui/CmdKDialog";
 import "./globals.css";
 
@@ -30,7 +30,14 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-bg-primary text-text-secondary antialiased">
-        <StarField />
+        <LiquidChrome
+          className="fixed inset-0 z-0"
+          baseColor={[0.12, 0.1, 0.35]}
+          speed={0.2}
+          amplitude={0.3}
+          frequencyX={3}
+          frequencyY={3}
+        />
         <StatusBar />
         <main className="relative z-10 pt-12 pb-28 min-h-screen">
           {children}

@@ -20,6 +20,9 @@ importers:
       next:
         specifier: ^15.2.0
         version: 15.5.19(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      ogl:
+        specifier: ^1.0.11
+        version: 1.0.11
       react:
         specifier: ^19.0.0
         version: 19.2.7
@@ -29,6 +32,9 @@ importers:
       tailwind-merge:
         specifier: ^3.0.0
         version: 3.6.0
+      unicornstudio-react:
+        specifier: ^2.1.12
+        version: 2.1.12(next@15.5.19(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       zustand:
         specifier: ^5.0.0
         version: 5.0.14(@types/react@19.2.17)(react@19.2.7)
@@ -561,6 +567,9 @@ packages:
       sass:
         optional: true
 
+  ogl@1.0.11:
+    resolution: {integrity: sha512-kUpC154AFfxi16pmZUK4jk3J+8zxwTWGPo03EoYA8QPbzikHoaC82n6pNTbd+oEaJonaE8aPWBlX7ad9zrqLsA==}
+
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
@@ -630,6 +639,17 @@ packages:
 
   undici-types@6.21.0:
     resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
+
+  unicornstudio-react@2.1.12:
+    resolution: {integrity: sha512-DoJMYEK/5Ecwp8Q/L8f4zQXtjSbb8enUHNeNP/VVrl3kZ6ULT6oyB+L3IjZTBFaUwMXxnlDkUWrhFULS26Rj1w==}
+    engines: {node: '>=20.0.0'}
+    peerDependencies:
+      next: '*'
+      react: '>=18.0.0'
+      react-dom: '>=18.0.0'
+    peerDependenciesMeta:
+      next:
+        optional: true
 
   zustand@5.0.14:
     resolution: {integrity: sha512-/8tAspM5LMPr28b3fwLYrtdj77ECpfZviaP75CMTnwO8ISyaE4GDIG/9rDDYq/cH9D2Xw2A2RXglLInmVBQB/g==}
@@ -1008,6 +1028,8 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
+  ogl@1.0.11: {}
+
   picocolors@1.1.1: {}
 
   postcss@8.4.31:
@@ -1084,6 +1106,13 @@ snapshots:
   typescript@5.7.2: {}
 
   undici-types@6.21.0: {}
+
+  unicornstudio-react@2.1.12(next@15.5.19(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
+    dependencies:
+      react: 19.2.7
+      react-dom: 19.2.7(react@19.2.7)
+    optionalDependencies:
+      next: 15.5.19(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
 
   zustand@5.0.14(@types/react@19.2.17)(react@19.2.7):
     optionalDependencies:

@@ -38,9 +38,9 @@ export interface Profile {
   projects: Project[];
   skills: SkillGroup[];
   contact: {
+    wechat: string;
     email: string;
-    github: string;
-    twitter: string;
+    phone: string;
   };
   life: {
     hobbies: { name: string; emoji: string; description: string }[];
@@ -57,76 +57,41 @@ const profile: Profile = {
   status: "Available for work",
   about: {
     bio: [
-      "I'm a frontend developer with a designer's eye. I care deeply about the details — the spacing between elements, the timing of an animation, the way a hover state feels.",
-      "Over 5 years of experience building products from zero to launch. I believe great interfaces come from understanding both the user and the code.",
-      "Currently focused on React, Next.js, and design systems. I love turning complex problems into simple, elegant interfaces.",
+      "黄家兴，北京化工大学在读，2023级（2027年毕业），主修国际贸易专业，系统掌握国际贸易实务等专业知识，辅修法学专业。",
+      "已通过大学英语四级、六级，使用过Codex、Claude Code等主流AI智能工具，可完成文案撰写、资料整理、数据梳理、内容优化、问题分析等工作，擅长借助智能化工具提升工作效率。",
+      "获北京化工大学萌芽杯校级三等奖，在校级科创竞赛中，通过团队调研、课题研究、成果打磨，锻炼了扎实的数据分析、问题探究、团队协作和文案撰写能力。",
     ],
-    strengths: [
-      {
-        label: "Product Thinking",
-        description:
-          "I don't just build UI — I understand the product context and user needs behind every interface decision.",
-      },
-      {
-        label: "Design Engineering",
-        description:
-          "Comfortable in Figma and in code. I bridge the gap between design and development.",
-      },
-      {
-        label: "Performance Obsession",
-        description:
-          "Core Web Vitals, bundle optimization, and buttery-smooth 60fps animations are non-negotiable.",
-      },
-    ],
-    workStyle: [
-      "Remote-first",
-      "Async communication",
-      "Write things down",
-      "Ship early, iterate fast",
-    ],
+    strengths: [],
+    workStyle: [],
   },
   experience: [
     {
       id: "exp-1",
-      company: "TechCorp",
-      role: "Senior Frontend Engineer",
-      period: "2023 — Present",
+      company: "北京化工大学交通管理部门",
+      role: "校内学生工作",
+      period: "2023年9月 — 至今",
       description:
-        "Led the frontend architecture for the company's flagship product — a SaaS platform serving 50K+ users.",
+        "日常负责校园班车运营秩序维护，每日值守班车站点，引导师生有序排队、文明乘车，及时疏导人流，避免拥挤混乱情况，保障班车通行效率与出行安全。",
       results: [
-        "Redesigned the core dashboard, improving user engagement by 35%",
-        "Built a shared component library adopted by 3 teams, cutting UI development time by 40%",
-        "Migrated from Pages Router to App Router with zero downtime",
+        "负责师生班车刷卡核验工作，精准完成刷卡登记、人员核对，耐心解答师生关于班车时刻表、路线调整、乘车规范等各类咨询问题",
+        "定期配合部门完成班车运营数据统计、秩序优化建议梳理等工作",
+        "长期的一线服务工作，极大锻炼了现场应变能力、沟通协调能力和责任心，能够高效应对人流高峰等突发场景，养成了严谨细致、踏实负责的工作态度",
       ],
-      techStack: ["React", "Next.js", "TypeScript", "TailwindCSS"],
+      techStack: ["现场管理", "沟通协调", "数据统计", "服务统筹"],
     },
     {
       id: "exp-2",
-      company: "StartupXYZ",
-      role: "Frontend Developer",
-      period: "2021 — 2023",
+      company: "学校精工工厂",
+      role: "校内实训实践",
+      period: "2025年6月",
       description:
-        "First frontend hire. Built the entire customer-facing product from scratch.",
+        "参与学校组织的精工工厂实习，系统观摩并学习化工工厂基础生产运作流程、车间安全规范、设备基础操作原理及生产运维标准。",
       results: [
-        "Shipped the MVP in 3 months, securing seed funding",
-        "Grew the frontend codebase from 0 to 50K lines with consistent patterns",
-        "Established CI/CD pipeline and testing infrastructure",
+        "跟随工作人员熟悉化工生产工序、物料流转、车间管控及质量核查基础工作，了解工业生产标准化、规范化作业模式",
+        "掌握基础工厂操作流程与安全作业准则",
+        "打破纯理论学习局限，积累了工业实操经验，培养了严谨、规范、恪守流程的工作思维，提升了细节把控、规则执行和现场学习落地的能力",
       ],
-      techStack: ["React", "TypeScript", "Styled Components", "Cypress"],
-    },
-    {
-      id: "exp-3",
-      company: "DesignStudio",
-      role: "UI Developer",
-      period: "2019 — 2021",
-      description:
-        "Worked at the intersection of design and engineering, turning Figma designs into production interfaces.",
-      results: [
-        "Delivered 20+ client projects with pixel-perfect implementation",
-        "Introduced component-driven development to the engineering team",
-        "Built internal tools that reduced QA feedback cycles by 50%",
-      ],
-      techStack: ["React", "JavaScript", "Sass", "Storybook"],
+      techStack: ["生产流程", "安全规范", "质量管控", "实操能力"],
     },
   ],
   projects: [
@@ -212,24 +177,30 @@ const profile: Profile = {
     },
   ],
   contact: {
-    email: "alex@example.com",
-    github: "https://github.com/alexchen",
-    twitter: "https://x.com/alexchen",
+    wechat: "wxid_81mrkaebk44k22",
+    email: "tacqing@gmail.com",
+    phone: "13086999074",
   },
   life: {
     hobbies: [
-      { name: "Photography", emoji: "📷", description: "Street photography — capturing fleeting moments in urban landscapes." },
-      { name: "Coffee Brewing", emoji: "☕", description: "Perfecting the pour-over. Coffee is a ritual, not just caffeine." },
-      { name: "Hiking", emoji: "🥾", description: "Weekend trail explorer. Nature is the best reset button." },
-      { name: "Reading", emoji: "📚", description: "Sci-fi and design books. Currently: The Design of Everyday Things." },
-      { name: "Music", emoji: "🎵", description: "Lo-fi beats while coding. Jazz while thinking. Rock while celebrating." },
+      { name: "拍照", emoji: "📷", description: "" },
+      { name: "羽毛球", emoji: "🏸", description: "" },
+      { name: "健身", emoji: "💪", description: "" },
+      { name: "阅读", emoji: "📚", description: "" },
+      { name: "音乐", emoji: "🎵", description: "" },
     ],
     personality: [
-      "INFJ-T",
-      "Detail-oriented",
-      "Curious learner",
-      "Team player",
-      "Problem solver",
+      "性格开朗乐观",
+      "待人真诚",
+      "沟通表达能力强",
+      "抗压能力强",
+      "乐于接受新鲜事物",
+      "主动学习",
+      "羽毛球",
+      "健身",
+      "踏实稳重",
+      "责任心强",
+      "团队配合意识好",
     ],
     quote: "The best way to predict the future is to create it.",
   },

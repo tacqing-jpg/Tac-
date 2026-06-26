@@ -31,7 +31,7 @@ export function StatusBar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-2.5">
         <div className="flex items-center gap-3 text-sm text-text-secondary">
           <span className="flex h-2.5 w-2.5 rounded-full bg-accent-purple animate-pulse" />
-          <span className="font-medium text-text-primary">Space OS</span>
+          <span className="font-medium text-text-primary">个人简历</span>
         </div>
         <div className="flex items-center gap-4 text-xs text-text-tertiary">
           <span>{date}</span>
