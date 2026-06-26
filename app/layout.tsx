@@ -6,8 +6,8 @@ import { CmdKDialog } from "@/components/ui/CmdKDialog";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Space OS — Portfolio",
-  description: "Personal portfolio — Space OS desktop experience",
+  title: "黄家兴 — 个人简历",
+  description: "黄家兴的个人简历 — Space OS 桌面体验",
 };
 
 export default function RootLayout({

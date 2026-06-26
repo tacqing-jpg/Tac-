@@ -50,10 +50,10 @@ export interface Profile {
 }
 
 const profile: Profile = {
-  name: "Alex Chen",
-  title: "Frontend Developer & UI Designer",
+  name: "黄家兴",
+  title: "北京化工大学 · 国际贸易专业",
   tagline:
-    "Building beautiful, performant web experiences with product thinking.",
+    "擅长借助智能化工具提升工作效率，具备扎实的数据分析与团队协作能力。",
   status: "Available for work",
   about: {
     bio: [

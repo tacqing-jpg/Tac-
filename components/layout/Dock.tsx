@@ -1,13 +1,14 @@
 "use client";
 
 import { useNavStore } from "@/store/navStore";
-import { BookOpen, Brain, Heart } from "lucide-react";
+import { BookOpen, Brain, Heart, User } from "lucide-react";
 import { motion } from "framer-motion";
 
 const CABINS = [
   { id: "study", label: "学习舱", icon: BookOpen },
   { id: "memory", label: "记忆舱", icon: Brain },
   { id: "life", label: "生活舱", icon: Heart },
+  { id: "aboutme", label: "关于我", icon: User },
 ] as const;
 
 export function Dock() {

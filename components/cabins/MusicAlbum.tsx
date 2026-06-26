@@ -3,19 +3,14 @@
 import { useEffect, useState, useRef } from "react";
 import { ArrowLeft, Play, Pause, SkipBack, SkipForward } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
+import { musicData, Track } from "@/data/music";
 
 interface MusicAlbumProps {
   onBack: () => void;
 }
 
-interface Track {
-  src: string;
-  title: string;
-}
-
 export function MusicAlbum({ onBack }: MusicAlbumProps) {
-  const [tracks, setTracks] = useState<Track[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [tracks] = useState<Track[]>(musicData);
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -25,17 +20,6 @@ export function MusicAlbum({ onBack }: MusicAlbumProps) {
   // Keep refs in sync
   useEffect(() => { indexRef.current = currentIndex; }, [currentIndex]);
   useEffect(() => { tracksRef.current = tracks; }, [tracks]);
-
-  // Load track list
-  useEffect(() => {
-    fetch("/api/music")
-      .then((res) => res.json())
-      .then((data: Track[]) => {
-        setTracks(data);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, []);
 
   // Create audio element once
   useEffect(() => {
@@ -111,9 +95,7 @@ export function MusicAlbum({ onBack }: MusicAlbumProps) {
 
       <h2 className="text-2xl font-bold text-text-primary">🎵 音乐</h2>
 
-      {loading ? (
-        <p className="text-text-tertiary text-sm">加载中...</p>
-      ) : tracks.length > 0 ? (
+      {tracks.length > 0 ? (
         <>
           {currentTrack && (
             <GlassCard hover={false}>

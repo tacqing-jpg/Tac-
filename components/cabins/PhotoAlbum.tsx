@@ -4,31 +4,16 @@ import { useEffect, useState } from "react";
 import { ArrowLeft, X } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { motion, AnimatePresence } from "framer-motion";
+import { photosData, Photo } from "@/data/photos";
 
 interface PhotoAlbumProps {
   onBack: () => void;
 }
 
-interface Photo {
-  src: string;
-  caption: string;
-}
-
 export function PhotoAlbum({ onBack }: PhotoAlbumProps) {
-  const [photos, setPhotos] = useState<Photo[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [photos] = useState<Photo[]>(photosData);
   const [selected, setSelected] = useState<Photo | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
-
-  useEffect(() => {
-    fetch("/api/photos")
-      .then((res) => res.json())
-      .then((data) => {
-        setPhotos(data);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, []);
 
   const openPhoto = (photo: Photo, index: number) => {
     setSelected(photo);
@@ -72,9 +57,7 @@ export function PhotoAlbum({ onBack }: PhotoAlbumProps) {
 
       <h2 className="text-2xl font-bold text-text-primary">📷 拍照</h2>
 
-      {loading ? (
-        <p className="text-text-tertiary text-sm">加载中...</p>
-      ) : photos.length > 0 ? (
+      {photos.length > 0 ? (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {photos.map((photo, i) => (
             <button key={i} onClick={() => openPhoto(photo, i)} className="text-left">

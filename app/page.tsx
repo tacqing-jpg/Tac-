@@ -5,16 +5,19 @@ import { CabinWindow } from "@/components/ui/CabinWindow";
 import { StudyCabin } from "@/components/cabins/StudyCabin";
 import { MemoryCabin } from "@/components/cabins/MemoryCabin";
 import { LifeCabin } from "@/components/cabins/LifeCabin";
+import { AboutMeCabin } from "@/components/cabins/AboutMeCabin";
 const CABINS = [
   { id: "study", label: "学习舱", emoji: "📚" },
   { id: "memory", label: "记忆舱", emoji: "🧠" },
   { id: "life", label: "生活舱", emoji: "💛" },
+  { id: "aboutme", label: "关于我", emoji: "🪪" },
 ] as const;
 
 const CABIN_CONTENT: Record<string, React.ComponentType> = {
   study: StudyCabin,
   memory: MemoryCabin,
   life: LifeCabin,
+  aboutme: AboutMeCabin,
 };
 
 export default function Page() {
